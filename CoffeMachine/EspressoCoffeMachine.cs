@@ -6,27 +6,17 @@ using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
-    class DripCoffeMachine : CoffeMachine
+    class EspressoCoffeMachine : CoffeMachine
     {
-        public DripCoffeMachine(string name) : base(name)
+        public EspressoCoffeMachine(string name) : base(name)
         {
 
-        }
-
-        public override string TurnOn()
-        {
-            return base.TurnOn();
-        }
-
-        public override string TurnOff()
-        {   
-            return base.TurnOff();
         }
 
         public override void Brew()
         {
             isDone = false;
-            //Brew some coffe
+            // Does some Brewing
             isDone = true;
         }
 
@@ -37,9 +27,17 @@ namespace CoffeMachine
 
         public override Beverage GiveBack(float amount)
         {
-            Container.Capacity -= amount;
-
             return Bev;
+        }
+
+        public override string TurnOff()
+        {
+            return base.TurnOff();
+        }
+
+        public override string TurnOn()
+        {
+            return base.TurnOn();
         }
     }
 }

@@ -43,11 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beverage.cs" />
-    <Compile Include="Coffe.cs" />
     <Compile Include="CoffeMachine.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="DripCoffeMachine.cs" />
-    <Compile Include="Machine.cs" />
+    <Compile Include="EspressoCoffeMachine.cs" />
+    <Compile Include="MachineOperator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

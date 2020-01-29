@@ -6,16 +6,33 @@ using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
-    abstract class CoffeMachine : Machine
+    abstract class CoffeMachine
     {
-        Coffe coffe;
+        private Beverage bev;
+
+        public Beverage Bev
+        {
+            get { return bev; }
+            set { bev = value; }
+        }
+
         Container container;
         protected bool isDone;
 
-        public Coffe Coffe { get => coffe; protected set => coffe = value; }
-        public Container Container { get => container; protected set => container = value; }
+        private string name;
+        bool isOn = false;
 
-        public CoffeMachine(string name) : base(name)
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+
+        public Container Container { get => container; protected set => container = value; }
+        protected bool IsOn { get => isOn; set => isOn = value; }
+
+        public CoffeMachine(string name)
         {
 
         }
@@ -23,8 +40,24 @@ namespace CoffeMachine
         public void AddContainer(Container container)
         {
             this.Container = container;
+            this.Bev = container.Beverage;
         }
-        public abstract void FillContainer(float amount, Coffe coffe);
+        public abstract void FillContainer(float amount);
         public abstract void Brew();
+        public abstract Beverage GiveBack(float amount);
+
+        public virtual string TurnOn()
+        {
+            IsOn = true;
+
+            return "Machine in on";
+        }
+
+        public virtual string TurnOff()
+        {
+            IsOn = false;
+
+            return "Machine is off";
+        }
     }
 }

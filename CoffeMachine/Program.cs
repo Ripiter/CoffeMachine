@@ -10,16 +10,22 @@ namespace CoffeMachine
     {
         static void Main(string[] args)
         {
-            Machine machine = new DripCoffeMachine("George");
-            Beverage beverage = new Coffe("Coffe");
-            Container container = new Container(30);
+            Beverage beverage = new Beverage("Normal", BeverageType.NormalCoffe);
+            MachineOperator machineOperator = new MachineOperator();
+            Container container = new Container(15,30, beverage);
 
-
-            ((DripCoffeMachine)machine).AddContainer(container);
-            ((DripCoffeMachine)machine).FillContainer(15,(Coffe)beverage);
-            
+            CoffeMachine machine = machineOperator.MachineryChoice(beverage);
 
             machine.TurnOn();
+            machine.AddContainer(container);
+            machine.Brew();
+            machine.TurnOff();
+
+            float coffeBack = 5f;
+            Container cup = new Container(5, 30, machine.GiveBack(coffeBack));
+
+
+            Console.WriteLine(cup.Capacity + " with " + cup.Beverage.TypeOfBeverage);
 
             Console.ReadKey();
         }

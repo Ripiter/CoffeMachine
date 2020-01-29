@@ -6,19 +6,34 @@ using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
-    abstract class Beverage
+    public enum BeverageType
     {
-        private string name;
+        NormalCoffe,
+        Espresso
+    }
+    class Beverage
+    {
+        private string mark;
 
-        public string Name
+        public string Mark
         {
-            get { return name; }
-            set { name = value; }
+            get { return mark; }
+            set { mark = value; }
         }
 
-        public Beverage(string name)
+        private BeverageType typeOfBeverage;
+
+        public BeverageType TypeOfBeverage
         {
-            this.Name = name;
+            get { return typeOfBeverage; }
+            set { typeOfBeverage = value; }
+        }
+        
+
+        public Beverage(string mark, BeverageType type)
+        {
+            this.Mark = mark;
+            this.typeOfBeverage = type;
         }
     }
 }
