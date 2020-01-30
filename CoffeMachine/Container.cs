@@ -18,7 +18,7 @@ namespace CoffeMachine
             this.Capacity = capacity;
 
             if (Capacity > Maxcapacity)
-                throw new Exception();
+                throw new OverflowException();
 
         }
         public float Maxcapacity { get => maxcapacity; set => maxcapacity = value; }

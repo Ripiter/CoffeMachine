@@ -17,12 +17,13 @@ namespace CoffeMachine
             CoffeMachine machine = machineOperator.MachineryChoice(beverage);
 
             machine.TurnOn();
+            machine.AddFilter(0);
             machine.AddContainer(container);
             machine.Brew();
             machine.TurnOff();
 
             float coffeBack = 5f;
-            Container cup = new Container(5, 30, machine.GiveBack(coffeBack));
+            Container cup = new Container(coffeBack, 30, machine.GiveBack(coffeBack));
 
 
             Console.WriteLine(cup.Capacity + " with " + cup.Beverage.TypeOfBeverage);

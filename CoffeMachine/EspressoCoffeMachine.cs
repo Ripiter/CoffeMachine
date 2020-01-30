@@ -13,6 +13,15 @@ namespace CoffeMachine
 
         }
 
+        public override void AddFilter(int amountOfFilters)
+        {
+            for (int i = 0; i < amountOfFilters; i++)
+            {
+                Filter filter = new Filter();
+            }
+            //Implements filter into the coffee machine
+        }
+
         public override void Brew()
         {
             isDone = false;

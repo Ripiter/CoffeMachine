@@ -42,10 +42,11 @@ namespace CoffeMachine
             this.Container = container;
             this.Bev = container.Beverage;
         }
+        public abstract void AddFilter(int amountOfFilters);
         public abstract void FillContainer(float amount);
         public abstract void Brew();
         public abstract Beverage GiveBack(float amount);
-
+        
         public virtual string TurnOn()
         {
             IsOn = true;

@@ -41,5 +41,14 @@ namespace CoffeMachine
 
             return Bev;
         }
+
+        public override void AddFilter(int amountOfFilters)
+        {
+            for (int i = 0; i < amountOfFilters; i++)
+            {
+                Filter filt = new Filter();
+            }
+            //Add filter to the mahine
+        }
     }
 }
