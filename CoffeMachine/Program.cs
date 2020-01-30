@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
@@ -10,10 +6,9 @@ namespace CoffeMachine
     {
         static void Main(string[] args)
         {
-            Beverage beverage = new Beverage("Normal", BeverageType.NormalCoffe);
+            Beverage beverage = new Beverage("Normal", BeverageType.Espresso);
             MachineOperator machineOperator = new MachineOperator();
-            Container container = new Container(15,30, beverage);
-
+            Container container = new Container(15, 30, beverage);
             CoffeMachine machine = machineOperator.MachineryChoice(beverage);
 
             machine.TurnOn();
@@ -23,11 +18,12 @@ namespace CoffeMachine
             machine.TurnOff();
 
             float coffeBack = 5f;
-            Container cup = new Container(coffeBack, 30, machine.GiveBack(coffeBack));
+            while (machine.Container.Capacity > 0)
+            {
+                Container cup = new Container(coffeBack, 30, machine.GiveBack(coffeBack));
+                Console.WriteLine(cup.Capacity + " with " + cup.Beverage.TypeOfBeverage);
 
-
-            Console.WriteLine(cup.Capacity + " with " + cup.Beverage.TypeOfBeverage);
-
+            }
             Console.ReadKey();
         }
     }

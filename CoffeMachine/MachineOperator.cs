@@ -27,6 +27,9 @@ namespace CoffeMachine
                 case BeverageType.Espresso:
                     machine = new EspressoCoffeMachine("Mikeal");
                     break;
+                case BeverageType.Tee:
+                    machine = new SmartCoffeMachine("Bob");
+                    break;
                 default:
                     break;
             }

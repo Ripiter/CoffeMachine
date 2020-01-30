@@ -9,7 +9,8 @@ namespace CoffeMachine
     public enum BeverageType
     {
         NormalCoffe,
-        Espresso
+        Espresso,
+        Tee
     }
     class Beverage
     {

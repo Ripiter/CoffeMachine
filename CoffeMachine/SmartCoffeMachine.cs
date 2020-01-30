@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
-    class EspressoCoffeMachine : CoffeMachine
+    class SmartCoffeMachine : CoffeMachine
     {
-        public EspressoCoffeMachine(string name) : base(name)
+        public SmartCoffeMachine(string name) : base(name)
         {
 
         }
-
         public override void AddFilter(int amountOfFilters)
         {
             for (int i = 0; i < amountOfFilters; i++)
@@ -36,8 +35,6 @@ namespace CoffeMachine
 
         public override Beverage GiveBack(float amount)
         {
-            Container.Capacity -= amount;
-
             return Bev;
         }
 
