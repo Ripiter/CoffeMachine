@@ -10,7 +10,7 @@ namespace CoffeMachine
     {
         NormalCoffe,
         Espresso,
-        Tee
+        Tee 
     }
     class Beverage
     {

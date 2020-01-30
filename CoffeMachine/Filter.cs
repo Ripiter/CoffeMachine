@@ -8,6 +8,8 @@ namespace CoffeMachine
 {
     class Filter
     {
+        uint amountOfHoles = 2;
 
+        public uint AmountOfHoles { get => amountOfHoles; set => amountOfHoles = value; }
     }
 }

@@ -22,7 +22,6 @@ namespace CoffeMachine
             {
                 Container cup = new Container(coffeBack, 30, machine.GiveBack(coffeBack));
                 Console.WriteLine(cup.Capacity + " with " + cup.Beverage.TypeOfBeverage);
-
             }
             Console.ReadKey();
         }
